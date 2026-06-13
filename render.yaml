@@ -2,6 +2,7 @@ services:
   - type: web
     name: nexaura-backend
     env: python
+    plan: free
     buildCommand: "cd backend && pip install -r requirements.txt"
     startCommand: "cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT"
     envVars:
@@ -14,5 +15,6 @@ services:
 
 databases:
   - name: nexaura-db
+    plan: free
     databaseName: nexaura
     user: nexaura_user
