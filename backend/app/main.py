@@ -29,9 +29,21 @@ def on_startup():
     
     # Auto-seed admin user
     try:
-        from seed_admin import seed_admin_user
+        from app.models.user import User, UserRole
+        from app.core.security import get_password_hash
         db = SessionLocal()
-        seed_admin_user(db)
+        admin_email = "nexauraiofficial@gmail.com"
+        admin = db.query(User).filter(User.email == admin_email).first()
+        if not admin:
+            new_admin = User(
+                name="NexAura Admin",
+                email=admin_email,
+                password_hash=get_password_hash("Nexaura@01"),
+                role=UserRole.Admin
+            )
+            db.add(new_admin)
+            db.commit()
+            print("Auto-seeded admin user successfully!")
         db.close()
     except Exception as e:
         print(f"Failed to seed admin: {e}")
