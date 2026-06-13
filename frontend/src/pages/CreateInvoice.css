@@ -1,0 +1,162 @@
+.create-invoice-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ai-banner {
+  background: linear-gradient(90deg, #1f2937 0%, var(--brand-black) 100%);
+  border-radius: 12px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  box-shadow: 0 10px 15px -3px rgba(255, 90, 0, 0.2);
+}
+
+.ai-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ai-icon-bg {
+  background: rgba(255, 90, 0, 0.2);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-orange {
+  color: var(--brand-orange);
+}
+
+.ai-content h3 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+}
+
+.ai-content p {
+  margin: 0;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.btn-upload {
+  background-color: var(--brand-orange);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.btn-upload:hover {
+  background-color: #e65100;
+  transform: translateY(-2px);
+}
+
+.invoice-form-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .invoice-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section-title {
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.items-section {
+  padding-bottom: 32px;
+}
+
+.items-table-header {
+  display: flex;
+  gap: 16px;
+  padding: 12px 0;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.item-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.btn-add-item {
+  background: transparent;
+  border: 1px dashed var(--brand-orange);
+  color: var(--brand-orange);
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 500;
+  margin-top: 8px;
+  transition: all 0.2s;
+}
+
+.btn-add-item:hover {
+  background: rgba(255, 90, 0, 0.05);
+}
+
+.totals-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  gap: 12px;
+}
+
+.total-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.grand-total {
+  font-size: 20px;
+  color: var(--brand-orange);
+  font-weight: 700;
+  padding-top: 12px;
+  border-top: 2px dashed var(--border-color);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
