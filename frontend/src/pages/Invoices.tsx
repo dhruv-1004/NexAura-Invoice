@@ -96,7 +96,7 @@ const Invoices = () => {
                     <td className="font-medium">{inv.invoice_number}</td>
                     <td>{inv.client_name}</td>
                     <td>{new Date(inv.issue_date).toLocaleDateString()}</td>
-                    <td className="font-medium">${inv.grand_total.toFixed(2)}</td>
+                    <td className="font-medium">${Number(inv.grand_total).toFixed(2)}</td>
                     <td>
                       <span className={`status-chip ${getStatusColor(inv.status)}`}>
                         {inv.status}

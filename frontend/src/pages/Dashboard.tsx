@@ -46,7 +46,7 @@ const Dashboard = () => {
           <div className="stat-icon orange"><DollarSign size={24} /></div>
           <div className="stat-content">
             <p>Monthly Revenue</p>
-            <h3>${data.monthly_revenue.toFixed(2)}</h3>
+            <h3>${Number(data.monthly_revenue).toFixed(2)}</h3>
           </div>
         </div>
         <div className="card stat-card">
