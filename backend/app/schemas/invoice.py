@@ -26,6 +26,9 @@ class InvoiceBase(BaseModel):
     client_name: str
     client_email: Optional[str] = None
     client_phone: Optional[str] = None
+    creator_name: Optional[str] = None
+    creator_phone: Optional[str] = None
+    creator_email: Optional[str] = None
     billing_address: str
     shipping_address: str
     client_tax_number: Optional[str] = None
@@ -43,6 +46,9 @@ class InvoiceUpdate(BaseModel):
     client_name: Optional[str] = None
     client_email: Optional[str] = None
     client_phone: Optional[str] = None
+    creator_name: Optional[str] = None
+    creator_phone: Optional[str] = None
+    creator_email: Optional[str] = None
     billing_address: Optional[str] = None
     shipping_address: Optional[str] = None
     client_tax_number: Optional[str] = None

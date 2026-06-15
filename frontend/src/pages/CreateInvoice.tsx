@@ -19,6 +19,9 @@ const CreateInvoice = () => {
     client_name: '',
     client_email: '',
     client_phone: '',
+    creator_name: '',
+    creator_phone: '',
+    creator_email: '',
     billing_address: '',
     shipping_address: '',
     client_tax_number: '',
@@ -167,6 +170,18 @@ const CreateInvoice = () => {
 
         <div className="card">
           <h3 className="section-title">Invoice Details</h3>
+          <div className="form-group">
+            <label className="label">Created By</label>
+            <input name="creator_name" value={formData.creator_name} onChange={handleInputChange} className="input-field" placeholder="Your Name" />
+          </div>
+          <div className="form-group">
+            <label className="label">Phone Number</label>
+            <input type="tel" name="creator_phone" value={formData.creator_phone} onChange={handleInputChange} className="input-field" placeholder="+1 234 567 8900" />
+          </div>
+          <div className="form-group">
+            <label className="label">Company Email</label>
+            <input type="email" name="creator_email" value={formData.creator_email} onChange={handleInputChange} className="input-field" placeholder="you@company.com" />
+          </div>
           <div className="form-group">
             <label className="label">Issue Date</label>
             <input type="date" name="issue_date" value={formData.issue_date} onChange={handleInputChange} className="input-field" />
