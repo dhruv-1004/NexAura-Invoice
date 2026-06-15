@@ -56,17 +56,15 @@ const Layout = () => {
 
       <main className="main-content">
         <header className="main-header">
-          <div className="header-content">
-            <div className="header-title">
-              {getHeaderTitle()}
-            </div>
-            {location.pathname === '/invoices' && (
-              <Link to="/invoices/new" className="btn-primary create-btn">
-                <PlusCircle size={18} />
-                New Invoice
-              </Link>
-            )}
+          <div className="header-title">
+            {getHeaderTitle()}
           </div>
+          {location.pathname === '/invoices' && (
+            <Link to="/invoices/new" className="btn-primary create-btn">
+              <PlusCircle size={18} />
+              New Invoice
+            </Link>
+          )}
         </header>
         
         <div className="content-wrapper animate-fade-in">
