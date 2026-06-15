@@ -211,7 +211,7 @@ const CreateInvoice = () => {
         <div className="totals-section">
           <div className="total-row">
             <span>Subtotal:</span>
-            <span>${subtotal.toFixed(2)}</span>
+            <span>{subtotal.toFixed(2)}</span>
           </div>
           <div className="total-row">
             <span>Discount:</span>
@@ -226,7 +226,7 @@ const CreateInvoice = () => {
           </div>
           <div className="total-row grand-total">
             <span>Grand Total:</span>
-            <span>${grandTotal.toFixed(2)}</span>
+            <span>{grandTotal.toFixed(2)}</span>
           </div>
         </div>
       </div>
