@@ -19,6 +19,12 @@ const Layout = () => {
     { path: '/settings', label: 'Settings', icon: <Settings size={20} /> },
   ];
 
+  const getHeaderTitle = () => {
+    if (location.pathname === '/invoices/new') return 'Create Invoice';
+    if (location.pathname.match(/^\/invoices\/[a-zA-Z0-9-]+$/)) return 'Invoice Details';
+    return navItems.find(item => location.pathname.startsWith(item.path))?.label || 'Invoice System';
+  };
+
   return (
     <div className="layout-container">
       <aside className="sidebar">
@@ -52,7 +58,7 @@ const Layout = () => {
         <header className="main-header">
           <div className="header-content">
             <div className="header-title">
-              {navItems.find(item => location.pathname.startsWith(item.path))?.label || 'Invoice System'}
+              {getHeaderTitle()}
             </div>
             {location.pathname === '/invoices' && (
               <Link to="/invoices/new" className="btn-primary create-btn">
