@@ -24,6 +24,8 @@ class InvoiceBase(BaseModel):
     issue_date: datetime
     due_date: datetime
     client_name: str
+    client_email: Optional[str] = None
+    client_phone: Optional[str] = None
     billing_address: str
     shipping_address: str
     client_tax_number: Optional[str] = None
@@ -39,6 +41,8 @@ class InvoiceUpdate(BaseModel):
     issue_date: Optional[datetime] = None
     due_date: Optional[datetime] = None
     client_name: Optional[str] = None
+    client_email: Optional[str] = None
+    client_phone: Optional[str] = None
     billing_address: Optional[str] = None
     shipping_address: Optional[str] = None
     client_tax_number: Optional[str] = None

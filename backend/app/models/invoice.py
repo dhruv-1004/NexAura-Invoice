@@ -21,6 +21,8 @@ class Invoice(Base):
     due_date = Column(DateTime, nullable=False)
     
     client_name = Column(String, nullable=False)
+    client_email = Column(String, nullable=True)
+    client_phone = Column(String, nullable=True)
     billing_address = Column(Text, nullable=False)
     shipping_address = Column(Text, nullable=False)
     client_tax_number = Column(String, nullable=True)

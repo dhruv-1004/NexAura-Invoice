@@ -17,6 +17,8 @@ const CreateInvoice = () => {
   
   const [formData, setFormData] = useState({
     client_name: '',
+    client_email: '',
+    client_phone: '',
     billing_address: '',
     shipping_address: '',
     client_tax_number: '',
@@ -144,6 +146,14 @@ const CreateInvoice = () => {
           <div className="form-group">
             <label className="label">Client Name</label>
             <input name="client_name" value={formData.client_name} onChange={handleInputChange} className="input-field" placeholder="Acme Corp" />
+          </div>
+          <div className="form-group">
+            <label className="label">Client Email</label>
+            <input type="email" name="client_email" value={formData.client_email} onChange={handleInputChange} className="input-field" placeholder="contact@acme.com" />
+          </div>
+          <div className="form-group">
+            <label className="label">Client Phone</label>
+            <input type="tel" name="client_phone" value={formData.client_phone} onChange={handleInputChange} className="input-field" placeholder="+1 234 567 8900" />
           </div>
           <div className="form-group">
             <label className="label">Billing Address</label>
