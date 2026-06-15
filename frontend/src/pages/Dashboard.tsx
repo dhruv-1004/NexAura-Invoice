@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { DollarSign, FileText, CheckCircle, Clock } from 'lucide-react';
 import api from '../services/api';
@@ -15,6 +16,7 @@ interface DashboardData {
 }
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -49,21 +51,21 @@ const Dashboard = () => {
             <h3>${Number(data.monthly_revenue).toFixed(2)}</h3>
           </div>
         </div>
-        <div className="card stat-card">
+        <div className="card stat-card" onClick={() => navigate('/invoices')} style={{ cursor: 'pointer' }}>
           <div className="stat-icon dark"><FileText size={24} /></div>
           <div className="stat-content">
             <p>Total Invoices</p>
             <h3>{data.total_invoices}</h3>
           </div>
         </div>
-        <div className="card stat-card">
+        <div className="card stat-card" onClick={() => navigate('/invoices?status=Paid')} style={{ cursor: 'pointer' }}>
           <div className="stat-icon green"><CheckCircle size={24} /></div>
           <div className="stat-content">
             <p>Paid</p>
             <h3>{data.paid_invoices}</h3>
           </div>
         </div>
-        <div className="card stat-card">
+        <div className="card stat-card" onClick={() => navigate('/invoices?status=Pending')} style={{ cursor: 'pointer' }}>
           <div className="stat-icon blue"><Clock size={24} /></div>
           <div className="stat-content">
             <p>Pending</p>
